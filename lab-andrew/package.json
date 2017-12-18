@@ -1,0 +1,31 @@
+{
+  "name": "lab-andrew",
+  "version": "1.0.0",
+  "description": "n-ary-trees-and-bst",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest -i --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ALB37/16-trees-and-binary-search-trees.git"
+  },
+  "keywords": [
+    "n-ary-trees",
+    "trees",
+    "bst"
+  ],
+  "author": "Andrew Bloom",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ALB37/16-trees-and-binary-search-trees/issues"
+  },
+  "homepage": "https://github.com/ALB37/16-trees-and-binary-search-trees#readme",
+  "devDependencies": {
+    "eslint": "^4.13.1",
+    "jest": "^22.0.1"
+  }
+}
