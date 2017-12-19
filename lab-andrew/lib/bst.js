@@ -104,12 +104,10 @@ class BinarySearchTree {
       }
       return this._findAndRemove(value);
     }
-    if (!node.left && !node.right){
-      if (node === this){
-        return null;
-      } 
-      return this._findAndRemove(value);
-    }
+    if (node === this){
+      return null;
+    } 
+    return this._findAndRemove(value);
   }
 }
 

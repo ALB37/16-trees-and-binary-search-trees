@@ -2,15 +2,15 @@
 
 ## Overview
 
-
+This is a model of two types of trees, a binary search tree, and an n-ary tree, each with several common methods available to them.
 
 ## Getting Started
 
-If you wish to use these constructors, simply copy the desired constructor's file into your project and require it into the script in which you would like to use it.
+If you wish to use these constructors, simply copy the desired constructor's file into your project and require it into the script in which you would like to use it. For example:
 
 ```const BinarySearchTree = require('./lib/bst')```
 
-To run tests to check functionality, do an 
+To run tests to check functionality, do an
 
 ```npm i -D jest```
 
