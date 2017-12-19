@@ -39,6 +39,11 @@ describe('tests for bst.js', () => {
   });
 
   describe('testing remove function', () => {
+
+    test('remove should return negative 1 if node with value does not exist', () => {
+      expect(root.remove(999)).toEqual(-1);
+
+    });
     test('remove should be able to remove a leaf', () => {
       root.remove(3);
       expect(root.find(3)).toEqual(-1);
@@ -72,7 +77,6 @@ describe('tests for bst.js', () => {
       root.remove(14);
       root.remove(16);
       root.remove(17);
-      console.log(root);
     });
 
     test('remove should be able to remove root, with 2, 1 and 0 children', () => {
@@ -87,6 +91,19 @@ describe('tests for bst.js', () => {
       root.insert(11);
       root = root.remove(10);
       expect(root.value).toEqual(11);
+    });
+
+    test('remove should account for removing nodes in all scenarios', () => {
+      root.insert(6);
+      root.insert(4);
+      root.insert(5);
+      root.remove(6);
+      expect(root.left.value).toEqual(4);
+      root.remove(4);
+      expect(root.left.value).toEqual(5);
+      root.remove(5);
+      root = root.remove(11);
+      expect(root).toEqual(null);
     });
   });
 
