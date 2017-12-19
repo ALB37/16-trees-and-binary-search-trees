@@ -8,18 +8,20 @@ class BinarySearchTree {
   }
 
   insert(value) {
+    if (value === this.value){
+      throw new Error('value already exists in BST');
+    }
     if (value > this.value) {
       if (!this.right) {
         return this.right = new BinarySearchTree(value);
       } else {
         return this.right.insert(value);
       }
+    } 
+    if (!this.left) {
+      return this.left = new BinarySearchTree(value);
     } else {
-      if (!this.left) {
-        return this.left = new BinarySearchTree(value);
-      } else {
-        return this.left.insert(value);
-      }
+      return this.left.insert(value);
     }
   }
 
@@ -43,6 +45,19 @@ class BinarySearchTree {
     }
 
   }
+
+  remove() {
+    
+  }
+
+  findMinValue() {
+    if (this.left){
+      return this.left.findMinValue();
+    } else {
+      return this.value;
+    }
+  }
 }
+
 
 module.exports = BinarySearchTree;
