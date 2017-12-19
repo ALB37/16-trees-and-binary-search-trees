@@ -1,19 +1,19 @@
 'use strict';
 
-const NArySearchTree = function(value) {
+const NAryTree = function(value) {
   this.value = value;
   this.children = [];
 };
 
-NArySearchTree.prototype.appendChild = function(tree) {
-  if (!(tree instanceof NArySearchTree)){
-    throw new TypeError('argument must be an instance of the NArySearchTree');
+NAryTree.prototype.appendChild = function(tree) {
+  if (!(tree instanceof NAryTree)){
+    throw new TypeError('argument must be an instance of the NAryTree');
   }
   this.children.push(tree);
 };
 
 
-NArySearchTree.prototype.breadthFirstFind = function(value) {
+NAryTree.prototype.breadthFirstFind = function(value) {
   let queue = [];
   queue.push(this);
 
@@ -31,7 +31,7 @@ NArySearchTree.prototype.breadthFirstFind = function(value) {
   }
 };
 
-NArySearchTree.prototype.breadthFirstToString = function () {
+NAryTree.prototype.breadthFirstToString = function () {
   let queue = [];
   queue.push(this);
 
@@ -49,22 +49,22 @@ NArySearchTree.prototype.breadthFirstToString = function () {
   return strAcc.trim();
 };
 
-NArySearchTree.prototype.depthFirstFind = function(value) {
+NAryTree.prototype.depthFirstToArray = function() {
   let stack = [];
   stack.push(this);
 
   let current = null;
+  let solArray = [];
 
   while (stack.length > 0) {
     current = stack.pop();
-    if (current.value === value){
-      return current;
-    }
+    solArray.push(current.value);
 
     for (let child of current.children) {
       stack.push(child);
     }
   }
+  return solArray;
 };
 
-module.exports = NArySearchTree;
+module.exports = NAryTree;

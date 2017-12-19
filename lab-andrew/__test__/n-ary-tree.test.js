@@ -58,4 +58,16 @@ describe('tests for n-ary-tree.js', () => {
       expect(empty.breadthFirstToString()).toEqual('0');
     });
   });
+
+  describe('tests for depthFirstToArray function', () => {
+
+    test('checking that depthFirstToArray prototype returns array with depth first order of node values', () => {
+      expect(root.depthFirstToArray()).toEqual([0, 3, 2, 6, 5, 7, 8, 8, 4, 1]);
+    });
+
+    test('checking that depthFirstToArray prototype returns array of length one on root with no children', () => {
+      let empty = new NAryTree(0);
+      expect(empty.depthFirstToArray()).toEqual([0]);
+    });
+  });
 });
