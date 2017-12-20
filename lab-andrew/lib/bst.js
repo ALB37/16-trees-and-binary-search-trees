@@ -29,6 +29,9 @@ class BinarySearchTree {
   }
 
   find(value) {
+    if (typeof value !== 'number') {
+      throw new TypeError('value must be a number');
+    }
     if (value === this.value) {
       return this;
     }
@@ -84,6 +87,9 @@ class BinarySearchTree {
   }
 
   remove(value) {
+    if (typeof value !== 'number') {
+      throw new TypeError('value must be a number');
+    }
     let node = this.find(value);
     if (node === -1){
       return -1;

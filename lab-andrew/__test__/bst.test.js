@@ -26,6 +26,11 @@ describe('tests for bst.js', () => {
   });
 
   describe('testing find function', () => {
+
+    test('find should return an error if number is not passed', () => {
+      expect(() => root.find(false)).toThrow();
+    });
+
     test('find should find the correct number of an existing node', () => {
       expect(root.find(10)).toEqual(root);
       expect(root.find(13)).toEqual(root.right.left);
@@ -39,6 +44,10 @@ describe('tests for bst.js', () => {
   });
 
   describe('testing remove function', () => {
+
+    test('remove should return an error if number is not passed', () => {
+      expect(() => root.remove(false)).toThrow();
+    });
 
     test('remove should return negative 1 if node with value does not exist', () => {
       expect(root.remove(999)).toEqual(-1);
